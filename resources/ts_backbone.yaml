@@ -1,0 +1,127 @@
+ts_backbone_type: "chronos"
+
+chronos_model:
+  name: "chronos-t5-large"
+  encoder_output_dim: 1024
+  projection_hidden_layer: 2
+  projection_hidden_dim: [2048, 3072]
+  last_token: true
+
+dropout_rate: 0.3
+default_ts_token: "<ts>"
+
+# ---------------------------------------------------------------------------
+# DATASETS
+# ---------------------------------------------------------------------------
+
+rwc:
+  id2label:
+    0: "No right whale call"
+    1: "Right whale call present"
+  num_labels: 2
+  channel_num: 1
+  sample_rate: 2000
+  default_ts_start_token: "<ts_start>"
+  default_ts_end_token: "<ts_end>"
+
+tee:
+  id2label:
+    0: "CG Positive Initial Return Stroke"
+    1: "IR Negative Initial Return Stroke"
+    2: "SR Subsequent Negative Return Stroke"
+    3: "I Impulsive Event"
+    4: "I2 Impulsive Event Pair (TIPP)"
+    5: "KM Gradual Intra-Cloud Stroke"
+    6: "O Off-record"
+  num_labels: 7
+  channel_num: 1
+  # NOTE: final released series is frequency-collapsed + smoothed; raw RF rate is not the series rate
+  raw_sample_rate_hz: 50000000
+  window_duration_sec: 0.0008
+  processed_length: 637
+  default_ts_start_token: "<ts_start>"
+  default_ts_end_token: "<ts_end>"
+
+ecg:
+  id2label:
+    0: "Normal sinus rhythm"
+    1: "Atrial fibrillation"
+    2: "Other rhythm"
+    3: "Too noisy to classify"
+  num_labels: 4
+  channel_num: 1
+  default_ts_start_token: "<ts_start>"
+  default_ts_end_token: "<ts_end>"
+
+emg:
+  id2label:
+    0: "Healthy (normal)"
+    1: "Myopathy"
+    2: "Neuropathy"
+  num_labels: 3
+  channel_num: 1
+  sample_rate: 4000
+  default_ts_start_token: "<ts_start>"
+  default_ts_end_token: "<ts_end>"
+
+ctu:
+  id2label:
+    0: "Desktop"
+    1: "Laptop"
+  num_labels: 2
+  channel_num: 1
+  sample_rate: 0.008333333
+  default_ts_start_token: "<ts_start>"
+  default_ts_end_token: "<ts_end>"
+
+har:
+  id2label:
+    0: "WALKING"
+    1: "WALKING_UPSTAIRS"
+    2: "WALKING_DOWNSTAIRS"
+    3: "SITTING"
+    4: "STANDING"
+    5: "LAYING"
+  num_labels: 6
+  channel_num: 3
+  sample_rate: 50
+  default_x_acc_start_token: "<x_acc_start>"
+  default_x_acc_end_token: "<x_acc_end>"
+  default_y_acc_start_token: "<y_acc_start>"
+  default_y_acc_end_token: "<y_acc_end>"
+  default_z_acc_start_token: "<z_acc_start>"
+  default_z_acc_end_token: "<z_acc_end>"
+
+had:
+  id2label:
+    0: "1. Walking Forward"
+    1: "2. Walking Left"
+    2: "3. Walking Right"
+    3: "4. Walking Upstairs"
+    4: "5. Walking Downstairs"
+    5: "6. Running Forward"
+    6: "7. Jumping"
+    7: "8. Sitting"
+    8: "9. Standing"
+    9: "10. Sleeping"
+    10: "11. Elevator Up"
+    11: "12. Elevator Down"
+  num_labels: 12
+  channel_num: 6
+  sample_rate: 100
+  default_x_acc_start_token: "<x_acc_start>"
+  default_x_acc_end_token: "<x_acc_end>"
+  default_y_acc_start_token: "<y_acc_start>"
+  default_y_acc_end_token: "<y_acc_end>"
+  default_z_acc_start_token: "<z_acc_start>"
+  default_z_acc_end_token: "<z_acc_end>"
+  default_x_gyro_start_token: "<x_gyro_start>"
+  default_x_gyro_end_token: "<x_gyro_end>"
+  default_y_gyro_start_token: "<y_gyro_start>"
+  default_y_gyro_end_token: "<y_gyro_end>"
+  default_z_gyro_start_token: "<z_gyro_start>"
+  default_z_gyro_end_token: "<z_gyro_end>"
+
+
+
+

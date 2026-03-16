@@ -1,0 +1,25 @@
+# Core
+numpy==2.2.6
+torch==2.9.1
+python-dotenv==1.2.1
+
+# Vision / plotting
+Pillow==12.0.0
+matplotlib==3.10.7
+
+# Time series
+sktime==0.39.0
+soundfile # for .aiff files in rwc
+
+# Hugging Face (latest main branch)
+transformers==4.57.3
+accelerate==1.12.0
+huggingface-hub==0.36.0
+
+# Qwen VL
+qwen-vl-utils[decord]==0.0.8
+
+
+# MISTRAL
+protobuf==6.33.2
+# pip install git+https://github.com/moment-timeseries-foundation-model/moment.git
