@@ -1,0 +1,45 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+
+# Ignore everything inside…
+.mypy_cache
+data/*
+data/datasets/*
+data/features/*
+data/images/*
+data/raw_data/*
+bin/data/raw_data/**
+data/samples/**
+data/sample_features/*
+data/sample_generations/*
+data/SLLM/*
+data/sllm_samples/*
+data/_OLD/*
+logs/*
+
+# …but keep the directories themselves
+!data/datasets/.gitkeep
+!data/features/.gitkeep
+!data/images/.gitkeep
+!data/raw_data/.gitkeep
+!data/sample_features/.gitkeep
+!data/samples/.gitkeep
+!data/sample_generations/.gitkeep
+!logs/.gitkeep
+
+# Scratch / local scripts
+_scratch_pad.py
+
+venv/
+*.log
+*.zip
+
+PROJECT_DOCUMENTATION.md
+
+credentials.json
+token.pickle
